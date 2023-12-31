@@ -1,0 +1,1 @@
+# FoundryVTT-package-release-action
