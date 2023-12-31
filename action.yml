@@ -1,0 +1,18 @@
+name: 'Release FoundryVTT Package'
+description: 'Pushes a new FoundryVTT package release to FoundryVTT.com'
+inputs:
+  package-release-token:
+    description: 'The secret API token for the package'
+    required: true
+  manifest-url:
+    description: 'The URL to the manfiest file for the version you are releasing'
+    required: true
+  dry-run:
+    description: 'Send the dry-run parameter to the Package Release API'
+    default: 'false'
+outputs:
+  response:
+    description: 'The response received from the API.'
+runs:
+  using: 'node20'
+  main: 'index.js'
