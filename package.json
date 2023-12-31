@@ -1,6 +1,6 @@
 {
   "name": "foundryvtt-package-release-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A GitHub Action to call the FoundryVTT Package Release API",
   "main": "index.js",
   "type": "module",
