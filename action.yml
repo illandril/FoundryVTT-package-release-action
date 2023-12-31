@@ -1,5 +1,9 @@
 name: 'Release FoundryVTT Package'
+author: 'Joe Spandrusyszyn (illandril)'
 description: 'Pushes a new FoundryVTT package release to FoundryVTT.com'
+branding:
+  icon: 'package'
+  color: 'gray-dark'
 inputs:
   package-release-token:
     description: 'The secret API token for the package'
