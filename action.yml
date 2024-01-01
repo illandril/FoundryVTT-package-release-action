@@ -19,4 +19,4 @@ outputs:
     description: 'The response received from the API.'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'dist/index.js'

@@ -5,8 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node -r dotenv/config index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "prebuild:run": "npm run clean",
+    "build": "ncc build src/index.ts --out dist --minify --target es2022",
+    "build:watch": "npm run build -- --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "preversion": "run-s validate build",
+    "validate": "run-s type-check lint test:coverage"
   },
   "repository": {
     "type": "git",
@@ -22,6 +31,19 @@
     "@actions/github": "^6.0.0"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1"
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "@babel/preset-env": "^7.23.7",
+    "@babel/preset-typescript": "^7.23.3",
+    "@illandril/eslint-config-foundryvtt": "^1.8.8",
+    "@types/jest": "^29.5.11",
+    "@vercel/ncc": "^0.38.1",
+    "babel-jest": "^29.7.0",
+    "babel-preset-minify": "^0.5.2",
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "jest-fail-on-console": "^3.1.2",
+    "npm-run-all2": "^6.1.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.2"
   }
 }
