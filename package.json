@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.23.7",
     "@babel/preset-typescript": "^7.23.3",
     "@illandril/eslint-config-foundryvtt": "^1.8.8",
-    "@types/jest": "^29.5.11",
+    "@types/jest": "^29.5.12",
     "@vercel/ncc": "^0.38.1",
     "babel-jest": "^29.7.0",
     "babel-preset-minify": "^0.5.2",
