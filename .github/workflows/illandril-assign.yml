@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+    inputs:
+      assignees:
+        type: string
+        default: illandril
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Auto-assign issue / PR'
+        uses: pozil/auto-assign-issue@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: illandril
+          allowSelfAssign: true

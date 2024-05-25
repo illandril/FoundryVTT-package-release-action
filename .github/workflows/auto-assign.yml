@@ -13,11 +13,6 @@ permissions:
 
 jobs:
   auto-assign:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Auto-assign issue / PR'
-        uses: pozil/auto-assign-issue@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: illandril
-          allowSelfAssign: true
+    uses: ./.github/workflows/illandril-assign.yml
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

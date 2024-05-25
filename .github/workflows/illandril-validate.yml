@@ -1,0 +1,35 @@
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: number
+        default: 20
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - run: npm ci --ignore-scripts
+      - run: npm run validate
+  build:
+    name: Run Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+        

@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["@illandril/biome-config"],
+  "overrides": [
+    {
+      "include": ["dist"],
+      "formatter": {
+        "enabled": false
+      },
+      "linter": {
+        "enabled": false
+      },
+      "organizeImports": {
+        "enabled": false
+      }
+    },
+    {
+      "include": ["**/*.test.*"],
+      "javascript": {
+        "globals": ["expect", "it", "jest"]
+      }
+    }
+  ]
+}

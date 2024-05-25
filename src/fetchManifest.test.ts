@@ -7,10 +7,11 @@ jest.mock('@actions/core', () => ({
 }));
 
 // @ts-expect-error Partial mock
-const fetch = jest.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.resolve({
-  json: () => Promise.resolve(JSON.parse(JSON.stringify(illandrilThirdPact))),
-}));
-
+const fetch = jest.spyOn(globalThis, 'fetch').mockImplementation(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(JSON.parse(JSON.stringify(illandrilThirdPact))),
+  }),
+);
 
 it.each([
   'https://www.example.com',

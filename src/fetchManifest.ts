@@ -5,12 +5,12 @@ const fetchManifest = async (manifestUrl: string) => {
 
   const manifestResponse = await fetch(manifestUrl);
 
-  const manifest = await manifestResponse.json() as {
-    id?: string
-    version?: string
-    manifest?: string
-    changelog?: string
-    compatibility?: object
+  const manifest = (await manifestResponse.json()) as {
+    id?: string;
+    version?: string;
+    manifest?: string;
+    changelog?: string;
+    compatibility?: object;
   };
 
   debug(JSON.stringify(manifest));

@@ -31,9 +31,7 @@ export const illandrilThirdPact = {
       },
     ],
   },
-  esmodules: [
-    'module.js',
-  ],
+  esmodules: ['module.js'],
   languages: [
     {
       lang: 'en',

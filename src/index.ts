@@ -1,4 +1,4 @@
-import { getInput, setOutput, setFailed } from '@actions/core';
+import { getInput, setFailed, setOutput } from '@actions/core';
 import release from './release.js';
 
 try {
@@ -10,13 +10,13 @@ try {
   setOutput('response', response);
   try {
     const parsedResponse = JSON.parse(response) as {
-      status?: string
-      message?: string
+      status?: string;
+      message?: string;
     };
     if (parsedResponse.status !== 'success') {
       setFailed(parsedResponse.message ?? `Unexpected response: ${response}`);
     }
-  } catch (parseError) {
+  } catch {
     setFailed(`Non-JSON response: ${response}`);
   }
 } catch (error) {
