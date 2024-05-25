@@ -28,7 +28,7 @@ The response received from the API.
 ## Example usage
 
 ```yaml
-uses: illandril/FoundryVTT-package-release-action@latest
+uses: illandril/FoundryVTT-package-release-action@v1
 with:
   package-release-token: ${{ secrets.PACKAGE_RELEASE_TOKEN }}
   manifest-url: 'https://github.com/you/your-package/releases/download/v1.2.3/module.json'
