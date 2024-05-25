@@ -14,5 +14,3 @@ permissions:
 jobs:
   auto-assign:
     uses: ./.github/workflows/illandril-assign.yml
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

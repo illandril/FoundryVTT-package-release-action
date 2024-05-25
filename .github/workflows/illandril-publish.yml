@@ -5,8 +5,6 @@ on:
         type: number
         default: 20
     secrets:
-      GITHUB_TOKEN:
-        required: true
       PACKAGE_RELEASE_TOKEN:
         required: true
 

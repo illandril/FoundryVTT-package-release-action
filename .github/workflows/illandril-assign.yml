@@ -4,9 +4,6 @@ on:
       assignees:
         type: string
         default: illandril
-    secrets:
-      GITHUB_TOKEN:
-        required: true
 
 jobs:
   auto-assign:
