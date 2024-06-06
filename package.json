@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
-    "@babel/preset-typescript": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.7",
     "@illandril/biome-config": "^1.2.0",
     "@types/jest": "^29.5.12",
     "@vercel/ncc": "^0.38.1",
