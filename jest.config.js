@@ -19,18 +19,30 @@ export default {
   coveragePathIgnorePatterns: ['src/tests/', '\\.d\\.ts$'],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: 'babel',
+  coverageProvider: 'v8',
 
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      branches: 0,
-      functions: 50,
-      lines: 20,
-      statements: 20,
+      branches: 80,
+      functions: 60,
+      lines: 75,
+      statements: 75,
     },
   },
 
   // The test environment that will be used for testing
   testEnvironment: 'node',
+
+  transform: {
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          target: 'es2021',
+        },
+        sourceMaps: true,
+      },
+    ],
+  },
 };
